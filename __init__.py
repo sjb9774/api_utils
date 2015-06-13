@@ -32,7 +32,7 @@ def api_call(route='/',
 
             # if key is not needed OR if it is needed, is present, and is valid,
             # then move forward
-            if not validation_required or (validate_callback and validate_callback(req))
+            if not validation_required or (validate_callback and validate_callback(req)):
                or (validation_callback and validation_callback(req)):
                 result = fn(req)
             else:
