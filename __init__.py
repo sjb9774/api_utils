@@ -45,7 +45,7 @@ def api_call(route='/',
                 raise ValueError('Request does not return a "success" flag.')
             else:
                 # tack on some metadata and return
-                result['metadata'] = get_metadata(route)
+                result['metadata'] = get_metadata(route, req)
                 return json.dumps(result)
         return app.route(route, **kwargs)(wrapper)
     return deco
