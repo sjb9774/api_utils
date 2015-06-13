@@ -81,3 +81,9 @@ class Request(object):
 
 def _copy_dict(dict):
     return {k: v for k, v in dict.iteritems()}
+
+def success(**kwargs):
+    return dict(success=True, **kwargs)
+
+def failure(**kwargs):
+    return dict(success=False, **kwargs)
